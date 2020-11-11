@@ -13,16 +13,20 @@ console.log(ticketPrice);
 
 var ticketPriceDiscount;
 
-if (age < 18) {
-  // va applicato uno sconto del 20% per i minorenni;
-  ticketPriceDiscount = ticketPrice - ((ticketPrice * 20) / 100);
-  ticketPriceDiscount = ticketPriceDiscount.toFixed(2);
-} else if (age > 65) {
-  // va applicato uno sconto del 40% per gli over 65.
-  ticketPriceDiscount = ticketPrice - ((ticketPrice * 40) / 100);
-  ticketPriceDiscount = ticketPriceDiscount.toFixed(2);
+if (isNaN(numberKm)) {
+  alert("Ha inserito del testo non supportato, riprovare di nuovo");
 } else {
-  ticketPriceDiscount = ticketPrice;
+  if (age < 18) {
+    // va applicato uno sconto del 20% per i minorenni;
+    ticketPriceDiscount = ticketPrice - ((ticketPrice * 20) / 100);
+    ticketPriceDiscount = ticketPriceDiscount.toFixed(2);
+  } else if (age > 65) {
+    // va applicato uno sconto del 40% per gli over 65.
+    ticketPriceDiscount = ticketPrice - ((ticketPrice * 40) / 100);
+    ticketPriceDiscount = ticketPriceDiscount.toFixed(2);
+  } else {
+    ticketPriceDiscount = ticketPrice;
+  }
 }
 console.log(ticketPriceDiscount);
 document.getElementById("price").innerHTML = ticketPriceDiscount;
