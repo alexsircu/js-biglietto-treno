@@ -7,17 +7,20 @@ console.log(age)
 // il prezzo del biglietto è definito in base ai km (0.21 € al km);
 var ticketPricePerKm = 0.21;
 
-var ticketPrice = parseInt(numberKm * ticketPricePerKm);
+var ticketPrice = (numberKm * ticketPricePerKm);
+ticketPrice = ticketPrice.toFixed(2);
 console.log(ticketPrice);
 
-var tcketPriceDiscount;
+var ticketPriceDiscount;
 
 if (age < 18) {
   // va applicato uno sconto del 20% per i minorenni;
   ticketPriceDiscount = ticketPrice - ((ticketPrice * 20) / 100);
+  ticketPriceDiscount = ticketPriceDiscount.toFixed(2);
 } else if (age > 65) {
   // va applicato uno sconto del 40% per gli over 65.
   ticketPriceDiscount = ticketPrice - ((ticketPrice * 40) / 100);
+  ticketPriceDiscount = ticketPriceDiscount.toFixed(2);
 } else {
   ticketPriceDiscount = ticketPrice;
 }
